@@ -7,13 +7,15 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { ListStaffComponent } from './list-staff/list-staff.component';
 import { Observable } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    ListStaffComponent
+    ListStaffComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
