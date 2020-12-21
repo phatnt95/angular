@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Observable, of, throwError } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { Product } from '../product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  product:any = [
+  private products:any = [
     {
       "id": 1,
       "name": "sp1"
@@ -15,9 +18,16 @@ export class ProductService {
     }
   ]
   constructor() { }
+  getProductList(): Observable<Product[]> {
+    return of(this.products).pipe(delay(50));
+  }
 
-  findProductById(id) {
-    return this.product(id)
-    
+  findProductById(id: string): Observable<Product> {
+    const product = this.products.find(p => p.id === id);
+    if (product) {
+      return of(product).pipe(delay(50));
+    } else {
+      return throwError(new Error('404 Not Found'));
+    }
   }
 }

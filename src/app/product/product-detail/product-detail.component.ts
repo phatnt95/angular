@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
+import { Product } from 'src/app/product';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -8,21 +10,23 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  product: any;
+  product: Product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productService : ProductService
+    private productService : ProductService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(params => {
-      console.log(params);
-      const id = params.get('id');
-      this.productService.findProductById(id).subscribe(
-        product => this.product = product
-      )
-    });
+    this.activatedRoute.paramMap.pipe(
+      map(params => params.get('id')),
+      switchMap(id => this.productService.findProductById(id))
+    ).subscribe(product => this.product = product);
+  }
+
+  backToList() {
+    this.router.navigate(['/product']);
   }
 
 }
