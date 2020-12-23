@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    // HttpClientModule,
     AppRoutingModule
   ],
   providers: [

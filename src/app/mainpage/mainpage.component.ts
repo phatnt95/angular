@@ -21,6 +21,7 @@ export class MainpageComponent implements OnInit {
   ) { }
   stateCtrl: FormControl;
   ngOnInit() {
+    debugger
     this.formdata = new FormGroup({
       name: new FormControl("", Validators.compose([
         Validators.required,

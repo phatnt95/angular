@@ -28,10 +28,10 @@ export class UserloginComponent implements OnInit {
   onClickSubmit(data) {
     console.log(data.uname);
     if (data.uname == "freetuts_audience" && data.passwd == "freetuts.net") {
-      alert("Login Successful");
+      // alert("Login Successful");
       this.router.navigate(['app-mainpage']);
     } else {
-      alert("sai ời");
+      // alert("sai ời");
     }
   }
 
