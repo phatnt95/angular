@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainpageComponent implements OnInit {
   formdata: FormGroup;
+  results: any = [];
   cutomerdata = [
     {
       name: "name",
@@ -17,7 +18,7 @@ export class MainpageComponent implements OnInit {
     }
   ];
   constructor(
-    private http : HttpClient
+    private http: HttpClient
   ) { }
   stateCtrl: FormControl;
   ngOnInit() {
@@ -34,6 +35,14 @@ export class MainpageComponent implements OnInit {
       address: new FormControl(""),
       message: new FormControl("")
     });
+    // this.http.get("http://jsonplaceholder.typicode.com/users").subscribe(data => {
+    //   console.log(data);
+    //   this.results = data;
+    // });
+    this.http.get("http://localhost:2402/api/contact/get-all").subscribe(data => {
+      console.log(data);
+      this.results = data;
+    });
   }
   onClickSubmit(data) {
     document.getElementById("custtable").style.display = "";
@@ -47,5 +56,7 @@ export class MainpageComponent implements OnInit {
     this.cutomerdata.push(row);
     console.log(this.cutomerdata);
   }
+
+
 
 }
