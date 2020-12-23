@@ -1,0 +1,19 @@
+<div class="form_container">
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <label>Họ và tên
+            <span>*</span>
+        </label>
+        <input type="text" name="name" formControlName="name" />
+        <label>Số ĐT
+            <span>*</span>
+        </label>
+        <input type="number" name="phone" formControlName="phone" />
+        <label>Địa chỉ
+            <span></span>
+        </label>
+        <input type="text" name="email" formControlName="email" />
+        
+        <button [disabled]="!formdata.valid" value="Submit">Submit</button>
+        <button routerLink="">Trở lại</button>
+    </form>
+</div>

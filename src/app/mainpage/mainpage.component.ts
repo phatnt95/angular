@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-mainpage',
@@ -35,17 +36,12 @@ export class MainpageComponent implements OnInit {
       address: new FormControl(""),
       message: new FormControl("")
     });
-    // this.http.get("http://jsonplaceholder.typicode.com/users").subscribe(data => {
+    // this.http.get("http://localhost:2402/api/contact/get-all").subscribe(data => {
     //   console.log(data);
     //   this.results = data;
     // });
-    this.http.get("http://localhost:2402/api/contact/get-all").subscribe(data => {
-      console.log(data);
-      this.results = data;
-    });
   }
   onClickSubmit(data) {
-    document.getElementById("custtable").style.display = "";
     var row = {
       "name": data.name,
       "phone": data.phone,
@@ -57,6 +53,16 @@ export class MainpageComponent implements OnInit {
     console.log(this.cutomerdata);
   }
 
+  showData() {
+    this.http.get("http://localhost:2402/api/contact/get-all").subscribe(data => {
+      console.log(data);
+      this.results = data;
+    });
+  }
+
+  add(data) {
+    
+  }
 
 
 }

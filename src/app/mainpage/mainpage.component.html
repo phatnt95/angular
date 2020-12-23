@@ -1,4 +1,4 @@
-<div class="form_container">
+<!-- <div class="form_container">
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
         <header>Thông tin bạn đọc Freetuts</header>
         <label>Họ và tên
@@ -20,24 +20,22 @@
         <button [disabled]="!formdata.valid" value="Submit">Submit</button>
         <button routerLink="">Trở lại</button>
     </form>
-</div>
-<br />
-<div id="custtable" style="display:none;margin:0 auto;">
+</div> -->
+<!-- <br /> -->
+<div id="custtable" style="margin:0 auto;">
     <table>
         <thead>
             <tr>
                 <th>Họ và tên</th>
                 <th>SDT</th>
-                <th>Địa chỉ</th>
-                <th>Lời nhắn gửi</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of cutomerdata">
+            <tr *ngFor="let item of results">
                 <td>{{item.name}}</td>
                 <td>{{item.phone}}</td>
-                <td>{{item.address}}</td>
-                <td>{{item.message}}</td>
+                <td>{{item.email}}</td>
             </tr>
         </tbody>
     </table>
