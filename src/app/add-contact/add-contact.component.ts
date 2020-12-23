@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ContactService } from '../service/contact.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -15,6 +16,7 @@ export class AddContactComponent implements OnInit {
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
+    private contactService: ContactService
   ) {
     
   }
@@ -34,11 +36,7 @@ export class AddContactComponent implements OnInit {
   }
 
   onClickSubmit(data) {
-    this.save(data).subscribe(result => this.gotoViewContact());
-  }
-
-  save(data) {
-    return this.http.post('http://localhost:2402/api/contact/save', data);
+    this.contactService.saveContact(data).subscribe(result => this.gotoViewContact());
   }
 
   gotoViewContact() {

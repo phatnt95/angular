@@ -13,6 +13,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { ContactService } from './service/contact.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     AppRoutingModule
   ],
   providers: [
-    
+    // ContactService
   ],
   bootstrap: [AppComponent]
 })
