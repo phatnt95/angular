@@ -24,8 +24,7 @@ export class AddContactComponent implements OnInit {
     this.formdata = new FormGroup({
       name: new FormControl("", Validators.compose([
         Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(10)
+        Validators.minLength(3)
       ])),
       phone: new FormControl("", Validators.compose([
         Validators.required,
