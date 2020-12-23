@@ -1,31 +1,5 @@
-<!-- <h1>Angular Router App</h1>
-This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<!-- <nav>
-  <ul>
-    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-    <li><a routerLink="/product" routerLinkActive="active">Product</a></li>
-  </ul>
-</nav> -->
-<!-- The routed views render in the <router-outlet>-->
-<!-- <router-outlet></router-outlet> -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/contact" class="btn btn-info">List Contact</a>
-                </li>
-            <li class="list-inline-item">
-              <a routerLink="/add-contact" class="btn btn-info">Add contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div class="mainpage">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </div>

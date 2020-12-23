@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { ContacFormComponent } from './contac-form/contac-form.component';
-import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
 
 const routes: Routes = [
-  { path: 'contact', component: ContactComponent },
-  { path: 'add-contact', component: ContacFormComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/contact'},//mặc định trỏ tới home
-  { path: '**', component: NotFoundComponent}
+  // { path: 'contact', component: ContactComponent },
+  // { path: 'add-contact', component: ContacFormComponent },
+  // { path: '', pathMatch: 'full', redirectTo: '/contact'},//mặc định trỏ tới home
+  // { path: '**', component: NotFoundComponent},
+  { path: '', component: UserloginComponent },
+  { path: 'app-mainpage', component: MainpageComponent }
 ];
 
 @NgModule({
@@ -19,6 +19,6 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 }

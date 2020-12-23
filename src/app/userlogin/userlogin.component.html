@@ -1,0 +1,14 @@
+<div class="form_container">
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <header>Đăng nhập hệ thống bạn đọc Freetuts</header>
+        <label>Username <span>*</span></label>
+        <input type="text" name="uname" formControlName="uname" />
+
+        <div class="help">Ít nhất 6 kí tự</div>
+        <label>Mật khẩu <span>*</span></label>
+        <input type="password" class="fortextbox" name="passwd" formControlName="passwd" />
+
+        <div class="help">Phân biệt hoa thường</div>
+        <button [disabled]="!formdata.valid" value="Login">Đăng nhập</button>
+    </form>
+</div>
