@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewContactComponent } from './view-contact/view-contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { ContactService } from './service/contact.service';
+import { ModalComponent } from './modal/modal.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,15 @@ import { ContactService } from './service/contact.service';
     MainpageComponent,
     ViewContactComponent,
     AddContactComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     // HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // NgbModule
   ],
   providers: [
     // ContactService
