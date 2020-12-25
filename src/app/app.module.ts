@@ -15,6 +15,15 @@ import { ViewContactComponent } from './view-contact/view-contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { ContactService } from './service/contact.service';
 import { ModalComponent } from './modal/modal.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { WidgetModule } from './widget/widget.module';
+
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -32,7 +41,15 @@ import { ModalComponent } from './modal/modal.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpClientModule,
+    MatTableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCommonModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     // NgbModule
   ],

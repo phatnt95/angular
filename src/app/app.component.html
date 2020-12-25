@@ -17,8 +17,13 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <!-- <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> -->
-        <img class="fas fa-bars" src="assets/icon/menu.svg" id="menu-toggle">
+        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+        <div class="mat-app-background basic-container">
+          <button class="btn btn-primary" (click)="openDialog()">Login</button>
+          <app-userlogin>loading</app-userlogin>
+        </div>
+        
+        <!-- <img class="fas fa-bars" src="assets/icon/menu.svg" id="menu-toggle"> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">a</span>
         </button>
@@ -28,7 +33,7 @@
               <a class="nav-link" href="#">Sign up <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log in</a>
+              <a class="nav-link" href="#">Log in</a> 
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
